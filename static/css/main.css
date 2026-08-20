@@ -1,6 +1,4 @@
 :root {
-  --main-breakpoint: 60em;
-
   --sans-serif-fonts: var(--bs-font-sans-serif);
 
   /* Colors */
@@ -270,6 +268,24 @@ samp {
   color: var(--fg-color);
 }
 
+@media (max-width: 991.98px) {
+  .navbar-toggler {
+    order: 3;
+  }
+
+  #docsearch {
+    margin-left: auto;
+    margin-right: 1em;
+    order: 2;
+  }
+
+  /* The expanded menu is flex-basis:100%; ordering it last makes it wrap
+     below the top row so docsearch + toggler stay put when it opens. */
+  .navbar-collapse {
+    order: 4;
+  }
+}
+
 /**
  * Logo
  */
@@ -323,6 +339,19 @@ samp {
   font-family: var(--sans-serif-fonts);
   margin: 0;
   padding-bottom: 0.25em;
+}
+
+@media (max-width: 525px) {
+  .lead-buttons-container {
+    margin: 0 3em;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lead-buttons-container .btn {
+    margin: 0.3em 0;
+    text-align: center;
+  }
 }
 
 /*
@@ -456,9 +485,16 @@ footer {
   padding: 1em 0;
 }
 
-@media (min-width: var(--main-breakpoint)) {
+@media (min-width: 60em) {
   footer {
     font-size: 0.9em;
+  }
+}
+
+@media (max-width: 525px) {
+  footer .flex {
+    flex-direction: column;
+    text-align: center;
   }
 }
 
